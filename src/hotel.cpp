@@ -9,13 +9,13 @@ void Hotel::addCustomer()
     customer.inputCustomer();
 
     customers.push_back(customer);   //vector grows automatically
-    //adds a new Customer obj to the end of the vector
+
     cout<<"\nCustomer added successfully!\n";
 }
 
 void Hotel::displayCustomers() const
 {
-    if(customers.empty()) //checks whether vector contains any cust
+    if(customers.empty())
     {
         cout<<"\nNo customers found.\n";
         return;

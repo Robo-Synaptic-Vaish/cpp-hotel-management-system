@@ -14,7 +14,7 @@ class Hotel
 
     public:
         void addCustomer();
-        void displayCustomer() const;
+        void displayCustomers() const;
 };
 
 #endif

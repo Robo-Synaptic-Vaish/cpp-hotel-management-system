@@ -1,7 +1,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-#include<string>
+#include <string>
 using namespace std;
 
 class Customer
@@ -36,4 +36,4 @@ class Customer
 //why use getters and setters
 //instead of allowing anyone to directly change values
 //we give controlled access.
-//Later, we can validation inside these functions.
+//Later, we can add validation inside these functions.
