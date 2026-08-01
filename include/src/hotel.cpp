@@ -35,3 +35,49 @@ void Hotel::displayCustomers() const
 //for(const Customer &customer : customers)
 //for every customer stored in the customers vector, 
 //look at the original object(don't make a copy) and don't modify it.
+
+Customer* Hotel::searchCustomer(int customerID)
+{
+    for(Customer &customer : customers)
+    {
+        if(customer.getCustomerID() == customerID)
+        {
+            return &customer;
+        }
+    }
+    return nullptr;        //there is no valid address
+}
+
+void Hotel::bookRoom()
+{
+    int customerID;
+    int roomNumber;
+
+    cout << "\nEnter Customer Id: ";
+    cin >> customerID;
+
+    Customer *customer = searchCustomer(CustomerID);
+
+    if(customer == nullptr)
+    {
+        cout << "\nCustomer not found.\n";
+        return;
+    }
+    cout << "Enter Room Number: ";
+    cin >> roomNumber;
+
+    customer->setRoomNumber(roomNumber);
+    customer->setCheckedIn(true);
+
+    cout << "\nRoom booked successfully!\n";
+}
+
+void Hotel::checkOut()
+{
+
+}
+
+void Hotel::generateBill() const
+{
+
+}
