@@ -48,6 +48,19 @@ Customer* Hotel::searchCustomer(int customerID)
     return nullptr;        //there is no valid address
 }
 
+bool Hotel::isRoomAvailable(int roomNumber) const
+{
+    for(const Customer &customer : customers)
+    {
+        if(Customer.isCheckedIn() &&
+            customer.getRoomNumber() == roomNumber)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 void Hotel::bookRoom()
 {
     int customerID;
@@ -66,10 +79,16 @@ void Hotel::bookRoom()
     cout << "Enter Room Number: ";
     cin >> roomNumber;
 
+    if(!isRoomAvailable(roomNumber))
+    {
+        cout << "\nRoom is already occupied.\n";
+        return;
+    }
+
     customer->setRoomNumber(roomNumber);
     customer->setCheckedIn(true);
 
-    cout << "\nRoom booked successfully!\n";
+    cout<<"\nRoom booked successfully!\n";
 }
 
 void Hotel::checkOut()

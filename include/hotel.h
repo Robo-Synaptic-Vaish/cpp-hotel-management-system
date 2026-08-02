@@ -15,6 +15,16 @@ class Hotel
     public:
         void addCustomer();
         void displayCustomers() const;
+
+        Customer* searchCustomer(int customerID);
+
+        bool isRoomAvailable(int roomNumber) const;
+
+        void bookRoom();
+        void checkOut();
+        void generateBill() const;
+
+        
 };
 
 #endif
