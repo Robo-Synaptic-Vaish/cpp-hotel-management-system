@@ -5,48 +5,57 @@ using namespace std;
 
 int main()
 {
-    Hotel hotel;
-    int choice;
-    cout << "1. Add Customer\n";
-    cout << "2. Display Customers\n";
-    cout << "3. Book Room\n";
-    cout << "4. Check Out\n";
-    cout << "5. Generate Bill\n";
-    cout << "6. Exit\n";
+    Hotel hotel;     //creates a Hotel object
+    int choice;      //stores the user's menu choice
 
-    cout << "Enter your choice: ";
-    cin >> choice;
-
-    switch(choice)
+    do
     {
-        case 1:
-            hotel.addCustomer();
-            break;
+        cout << "\n==============================\n";
+        cout << "   HOTEL MANAGEMENT SYSTEM\n";
+        cout << "==============================\n";
 
-        case 2:
-            hotel.displayCustomers();
-            break;
+        cout << "1. Add Customer\n";
+        cout << "2. Display Customers\n";
+        cout << "3. Book Room\n";
+        cout << "4. Check Out\n";
+        cout << "5. Generate Bill\n";
+        cout << "6. Exit\n";
 
-        case 3:
-            hotel.bookRoom();
-            break;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-        case 4:
-            hotel.checkOut();
-            break;
+        switch (choice)
+        {
+            case 1:
+                hotel.addCustomer();
+                break;
 
-        case 5:
-            hotel.generateBill();
-            break;
+            case 2:
+                hotel.displayCustomers();
+                break;
 
-        case 6:
-            cout << "\nThank you for using Hotel Management System!\n";
-            break;
+            case 3:
+                hotel.bookRoom();
+                break;
 
-        default:
-            cout << "\nInvalid choice. Please try again.\n";
-    }
-    while(choice != 6);
+            case 4:
+                hotel.checkOut();
+                break;
 
-    return 0;
+            case 5:
+                hotel.generateBill();
+                break;
+
+            case 6:
+                cout << "\nThank you for using Hotel Management System!\n";
+                break;
+
+            default:
+                cout << "\nInvalid choice. Please try again.\n";
+        }
+
+    } while (choice != 6);
+    //keeps displaying the menu until the user chooses Exit
+
+    return 0;    //program ended successfully
 }

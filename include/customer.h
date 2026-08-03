@@ -22,7 +22,11 @@ class Customer
         void displayCustomer() const;   //displaying info won't modify the object .:. const
 
         int getCustomerID() const;
+        string getName() const;
+        int getAge() const;
+        string getPhone() const;
         int getRoomNumber() const;
+        int getDaysStayed() const;
         bool isCheckedIn() const;
 
         void setRoomNumber(int room);    //change private data in a controlled way

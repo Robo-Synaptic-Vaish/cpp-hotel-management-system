@@ -22,9 +22,11 @@ class Hotel
 
         void bookRoom();
         void checkOut();
+
         void generateBill() const;
 
-        
+        void saveToFile() const;
+        void loadFromFile();       
 };
 
 #endif
