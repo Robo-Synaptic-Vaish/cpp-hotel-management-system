@@ -1,0 +1,1 @@
+the customer data is refreshed with every session timeout!
